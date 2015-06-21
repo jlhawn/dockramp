@@ -1,0 +1,977 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Sum",
+				"Sum256	[32]byte ƒ"
+			],
+			[
+				"PAr",
+				"Parameters	map[string]interface{} ʈ"
+			],
+			[
+				"Me",
+				"AuthMethod	string ν"
+			],
+			[
+				"acc",
+				"account	struct ʈ"
+			],
+			[
+				"for",
+				"forwardedHost	string ν"
+			],
+			[
+				"resu",
+				"resumeHashAt	error ƒ"
+			],
+			[
+				"WithV",
+				"WithValues	context.Context ƒ"
+			],
+			[
+				"B",
+				"bufferedFileWriter	bufferedFileWriter ν"
+			],
+			[
+				"SH",
+				"SHA256	 Ɩ"
+			],
+			[
+				"Sha",
+				"SHA384	 Ɩ"
+			],
+			[
+				"Sh",
+				"SHA256	 Ɩ"
+			],
+			[
+				"Path",
+				"PathNotFoundError	struct ʈ"
+			],
+			[
+				"st",
+				"storagedriver	 package ρ"
+			],
+			[
+				"dig",
+				"digestVerifier	digest.Verifier ν"
+			],
+			[
+				"r",
+				"resumableDigester	digest.ResumableDigester ν"
+			],
+			[
+				"s",
+				"size	int64 ν"
+			],
+			[
+				"fil",
+				"fileOffset	int64 ν"
+			],
+			[
+				"SEEK",
+				"SEEK_SET	 Ɩ"
+			],
+			[
+				"dgst",
+				"dgstVerifier	digest.Verifier ν"
+			],
+			[
+				"man",
+				"manifestDigest	digest.Digest ν"
+			],
+			[
+				"New",
+				"NewReader	*bytes.Reader ƒ"
+			],
+			[
+				"Ne",
+				"NewDigestVerifier	digest.Verifier, error ƒ"
+			],
+			[
+				"Fo",
+				"FormatStatus	[]byte ƒ"
+			],
+			[
+				"reWithDig",
+				"reWithDigest2	*regexp.Regexp ν"
+			],
+			[
+				"reWithTag",
+				"reWithTag2	*regexp.Regexp ν"
+			],
+			[
+				"Fat",
+				"Fatalf	 ƒ"
+			],
+			[
+				"rep",
+				"repoRefs	Repository ν"
+			],
+			[
+				"Set",
+				"SetList	error ƒ"
+			],
+			[
+				"user",
+				"userCollabResourceAccessSets	map[Resource]ScopeSet ν"
+			],
+			[
+				"org",
+				"orgCollabResourceAccessSets	map[Resource]ScopeSet ν"
+			],
+			[
+				"own",
+				"ownedResourceAccessSets	map[Resource]ScopeSet ν"
+			],
+			[
+				"deb",
+				"Debugf	 ƒ"
+			],
+			[
+				"res",
+				"requestedAccessSets	map[Resource]ScopeSet ν"
+			],
+			[
+				"Deb",
+				"Debugf	 ƒ"
+			],
+			[
+				"De",
+				"Debugf	 ƒ"
+			],
+			[
+				"D",
+				"Debugf	 ƒ"
+			],
+			[
+				"Debu",
+				"DebugLevel	 Ɩ"
+			],
+			[
+				"log",
+				"logLevel	logrus.Level ν"
+			],
+			[
+				"G",
+				"Getenv	string ƒ"
+			],
+			[
+				"In",
+				"InfoLevel	 Ɩ"
+			],
+			[
+				"F",
+				"Fatalf	 ƒ"
+			],
+			[
+				"Print",
+				"Printf	 ƒ"
+			],
+			[
+				"other",
+				"otherUserResources	ResourceSet ν"
+			],
+			[
+				"oht",
+				"otherUserResources	ResourceSet ν"
+			],
+			[
+				"is",
+				"isMember	bool ν"
+			],
+			[
+				"req",
+				"requestedResources	ResourceSet ν"
+			],
+			[
+				"Resou",
+				"ResourceSet	map[Resource]bool ʈ"
+			],
+			[
+				"R",
+				"regHubUID	int64 ν"
+			],
+			[
+				"e",
+				"errNo	syscall.Errno ν"
+			],
+			[
+				"C",
+				"Close	error ƒ"
+			],
+			[
+				"opt",
+				"option	int ν"
+			],
+			[
+				"LOCK",
+				"LOCK_NB	 Ɩ"
+			],
+			[
+				"op",
+				"option	int ν"
+			],
+			[
+				"Fa",
+				"Fatal	 ƒ"
+			],
+			[
+				"O_R",
+				"O_RDWR	 Ɩ"
+			],
+			[
+				"Ope",
+				"OpenFile	file *os.File, err error ƒ"
+			],
+			[
+				"Boo",
+				"BoolVar	 ƒ"
+			],
+			[
+				"Str",
+				"StringVar	 ƒ"
+			],
+			[
+				"E",
+				"Exit	 ƒ"
+			],
+			[
+				"LOC",
+				"LOCK_EX	 Ɩ"
+			],
+			[
+				"port",
+				"port_bindings"
+			],
+			[
+				"build",
+				"build_path"
+			],
+			[
+				"inner",
+				"innerJob	*Job ν"
+			],
+			[
+				"ST",
+				"Stdout	*Output ν"
+			],
+			[
+				"Re",
+				"Reset	 ƒ"
+			],
+			[
+				"out",
+				"outBuf	*bytes.Buffer ν"
+			],
+			[
+				"inn",
+				"innerJobOutput	*Output ν"
+			],
+			[
+				"En",
+				"Eng	*Engine ν"
+			],
+			[
+				"inne",
+				"innerJob	 ν"
+			],
+			[
+				"Stat",
+				"StatusOK	 Ɩ"
+			],
+			[
+				"Sta",
+				"StatusOK	 Ɩ"
+			],
+			[
+				"St",
+				"Stdout	*Output ν"
+			],
+			[
+				"Nop",
+				"NopWriteCloser	io.WriteCloser ƒ"
+			],
+			[
+				"iout",
+				"ioutils	 package ρ"
+			],
+			[
+				"call",
+				"calledWrite	bool ν"
+			],
+			[
+				"Ve",
+				"Version1	 Ɩ"
+			],
+			[
+				"Versio",
+				"Version1	 Ɩ"
+			],
+			[
+				"Get",
+				"GetVersionLabel	string ƒ"
+			],
+			[
+				"Spl",
+				"SplitN	[]string ƒ"
+			],
+			[
+				"vers",
+				"versionString	 ν"
+			],
+			[
+				"no",
+				"Now	time.Time ƒ"
+			],
+			[
+				"M",
+				"Marshal	[]byte, error ƒ"
+			],
+			[
+				"ports",
+				"ports	portSpecSlice ν"
+			],
+			[
+				"Port",
+				"portSpecSlice	[]PortSpec ʈ"
+			],
+			[
+				"portS",
+				"portSpecB	PortSpec ν"
+			],
+			[
+				"key",
+				"keyUsage	x509.KeyUsage ν"
+			],
+			[
+				"Sel",
+				"GenerateSelfSignedServerCert	*x509.Certificate, error ƒ"
+			],
+			[
+				"pub",
+				"pubKeyBytes	[]byte ν"
+			],
+			[
+				"Mar",
+				"MarshalIndent	[]byte, error ƒ"
+			],
+			[
+				"cr",
+				"cryptoPubKey	crypto.PublicKey ν"
+			],
+			[
+				"Fr",
+				"FromCryptoPublicKey	libtrust.PublicKey, error ƒ"
+			],
+			[
+				"Pu",
+				"FromCryptoPublicKey	libtrust.PublicKey, error ƒ"
+			],
+			[
+				"Fatal",
+				"Fatalf	 ƒ"
+			],
+			[
+				"Par",
+				"ParseCertificate	*x509.Certificate, error ƒ"
+			],
+			[
+				"x",
+				"x509	 package ρ"
+			],
+			[
+				"Pr",
+				"Println	n int, err error ƒ"
+			],
+			[
+				"J",
+				"UnmarshalPublicKeyJWKSet	[]libtrust.PublicKey, error ƒ"
+			],
+			[
+				"Gen",
+				"GenerateECP256PrivateKey	libtrust.PrivateKey, error ƒ"
+			],
+			[
+				"func",
+				"func main	func main {...} ʂ"
+			],
+			[
+				"Pri",
+				"Println	 ƒ"
+			],
+			[
+				"Respo",
+				"ResponseWriter	interface ¡"
+			],
+			[
+				"Wr",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"pass",
+				"passwordMinLength	 ν"
+			],
+			[
+				"Acc",
+				"Account	struct ʈ"
+			],
+			[
+				"Is",
+				"IsNotExist	bool ƒ"
+			],
+			[
+				"Account",
+				"AccountManager	struct ʈ"
+			],
+			[
+				"Mkd",
+				"MkdirAll	error ƒ"
+			],
+			[
+				"S",
+				"SHA256	 Ɩ"
+			],
+			[
+				"I",
+				"Infof	 ƒ"
+			],
+			[
+				"lay",
+				"layerTarSum	tarsum.TarSum ν"
+			],
+			[
+				"N",
+				"NewEncoder	*json.Encoder ƒ"
+			],
+			[
+				"Fil",
+				"FileMode	uint32 ʈ"
+			],
+			[
+				"json",
+				"jsonPath	string ƒ"
+			],
+			[
+				"tar",
+				"tarHeaderSelectFunc	func(h *tar.Header) (orderedHeaders [][2]string) ʈ"
+			],
+			[
+				"tarHead",
+				"tarHeaderSelector	interface ¡"
+			],
+			[
+				"Ver",
+				"VersionDev	 Ɩ"
+			],
+			[
+				"tarHeaderS",
+				"tarHeaderSelectFunc	func(h *tar.Header) (orderedHeaders [][2]string) ʈ"
+			],
+			[
+				"ve",
+				"Version0	 Ɩ"
+			],
+			[
+				"tarHe",
+				"tarHeaderSelector	interface ¡"
+			],
+			[
+				"con",
+				"constructor	func() tarHeaderEncoder ν"
+			],
+			[
+				"Er",
+				"ErrVersionNotImplemented	error ν"
+			],
+			[
+				"Vers",
+				"Version0	 Ɩ"
+			],
+			[
+				"img",
+				"imgID	string ν"
+			],
+			[
+				"pa",
+				"parentDir	string ν"
+			],
+			[
+				"Wal",
+				"WalkFunc	func(path string, info os.FileInfo, err error) error ʈ"
+			],
+			[
+				"main",
+				"func main	func main {...} ʂ"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"MAR",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"MARK",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jlhawn/gopaths/dockramp/src/github.com/jlhawn/dockramp"
+	],
+	"file_history":
+	[
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/docs/spec/manifest_example.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/docs/spec/manifest-v2-2.md",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/database.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/account.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/user_collab_repos.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/public_repos.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/owned_repos.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/authorize.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/handlers/app.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/api/v2/errors.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/accesscontroller.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/token.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/cmd/registry/main.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/cmd/registry/config.yml",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/cmd/registry/token_roots.pem",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/configuration/utils.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/distribution.sublime-project",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/group_collab_repos.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/auth.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/repositories.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/stackerr.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/stringset.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/scopeset.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/util.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/silly/access.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/token/accesscontroller.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub/token_test.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/configuration/configuration.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub_token/token.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub_token/accesscontroller.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/hub_token/util.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/api/v2/urls_test.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/api/v2/urls.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/storage/layerwriter.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/storage/paths.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/handlers/layerupload.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/context/context.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/Makefile",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/configuration/configuration_test.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/context/http.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/storage/filewriter.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/context/http_test.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/context/util.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/context/logger.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/.gitignore",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/cmd/garant/garant.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/app.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/hub/account.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/hub/owned_repos.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/hub/public_repos.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/hub/user_collab_repos.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/auth.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/naive/naive.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/auth/panic/panic.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/Godeps/Godeps.json",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/reporting.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/handlers.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/token.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/config/config.go",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/cmd/garant/config.yml",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/project/hooks/pre-commit",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/Makefile",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/Dockerfile",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/circle.yml",
+		"/Users/jlhawn/gopaths/garant/src/github.com/docker/garant/cmd/garant.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/configuration/parser.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/auth/token/util.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/digest/digester.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/Godeps/Godeps.json",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/registry/storage/driver/storagedriver.go",
+		"/Users/jlhawn/gopaths/distribution/src/github.com/docker/distribution/digest/verifiers.go",
+		"/usr/local/go/src/os/file.go",
+		"/Users/jlhawn/Sync/config/registry_v2/prod_aws/stacker.yml",
+		"/Users/jlhawn/Sync/config/garant/prod_aws/stacker.yml",
+		"/Users/jlhawn/workspace/docker/graph/pull.go",
+		"/Users/jlhawn/workspace/docker/daemon/daemon.go",
+		"/Users/jlhawn/go/src/github.com/docker/docker/trust/trusts.go",
+		"/Users/jlhawn/workspace/docker/trust/trusts.go",
+		"/Users/jlhawn/workspace/docker/registry/session_v2.go",
+		"/Users/jlhawn/workspace/docker/graph/push.go",
+		"/Users/jlhawn/workspace/docker/graph/manifest.go",
+		"/Users/jlhawn/workspace/docker/registry/config.go",
+		"/Users/jlhawn/workspace/docker/docker/docker.go",
+		"/Users/jlhawn/workspace/docker/api/client/cli.go",
+		"/Users/jlhawn/workspace/docker/docker/flags.go",
+		"/Users/jlhawn/workspace/docker/hack/make/.dockerversion",
+		"/Users/jlhawn/workspace/docker/VERSION",
+		"/Users/jlhawn/workspace/docker/docker/client.go",
+		"/Users/jlhawn/workspace/docker/registry/session.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/docker_cli_by_digest_test.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/docker_cli_pull_test.go",
+		"/Users/jlhawn/workspace/docker/api/client/commands.go",
+		"/Users/jlhawn/workspace/docker/graph/tags.go",
+		"/Users/jlhawn/workspace/docker/api/server/server.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/docker_cli_push_test.go",
+		"/Users/jlhawn/workspace/docker/graph/list.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/docker_test_vars.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/utils.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/requirements.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/docker_cli_build_test.go",
+		"/Users/jlhawn/workspace/docker/integration-cli/docker_utils.go",
+		"/Users/jlhawn/workspace/docker/integration/api_test.go",
+		"/Users/jlhawn/workspace/docker/integration/README.md",
+		"/Users/jlhawn/workspace/docker/registry/v2/routes_test.go",
+		"/Users/jlhawn/workspace/docker/hack/vendor.sh",
+		"/Users/jlhawn/workspace/docker/Dockerfile",
+		"/Users/jlhawn/workspace/docker/graph/tags_unit_test.go",
+		"/Users/jlhawn/workspace/docker/daemon/image_delete.go",
+		"/Users/jlhawn/workspace/docker/docs/man/docker-images.1.md",
+		"/Users/jlhawn/go/src/github.com/docker/docker/utils/utils.go",
+		"/Users/jlhawn/go/src/github.com/docker/docker/pkg/parsers/parsers.go",
+		"/Users/jlhawn/workspace/docker/builder/internals.go",
+		"/Users/jlhawn/workspace/docker/daemon/create.go",
+		"/Users/jlhawn/workspace/docker/daemon/list.go",
+		"/Users/jlhawn/workspace/docker/graph/export.go",
+		"/Users/jlhawn/workspace/docker/pkg/parsers/parsers.go",
+		"/Users/jlhawn/workspace/docker/pkg/parsers/parsers_test.go",
+		"/Users/jlhawn/workspace/docker/builder/job.go",
+		"/Users/jlhawn/workspace/docker/CHANGELOG.md",
+		"/Users/jlhawn/go/src/github.com/docker/docker/pkg/mflag/flag.go",
+		"/Users/jlhawn/workspace/docker/docs/sources/reference/commandline/cli.md",
+		"/Users/jlhawn/workspace/docker/docs/sources/reference/api/docker_remote_api_v1.18.md",
+		"/Users/jlhawn/workspace/docker/docs/sources/reference/api/docker_remote_api.md",
+		"/Users/jlhawn/workspace/docker/docs/sources/reference/api/docker_remote_api_v1.2.md",
+		"/Users/jlhawn/workspace/docker/graph/tag.go",
+		"/Users/jlhawn/workspace/docker/image/image.go",
+		"/Users/jlhawn/workspace/docker/Makefile",
+		"/Users/jlhawn/Sync/config/garant/production/signing_key.json"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jlhawn/workspace/docker",
+			"/Users/jlhawn/workspace/docker/graph",
+			"/Users/jlhawn/workspace/docker/registry",
+			"/Users/jlhawn/workspace/docker/registry/v2",
+			"/Users/jlhawn/workspace/docker/integration-cli",
+			"/Users/jlhawn/workspace/docker",
+			"/Users/jlhawn/workspace/docker/integration-cli",
+			"/Users/jlhawn/workspace/docker",
+			"/Users/jlhawn/workspace/garant",
+			"/Users/jlhawn/workspace/docker",
+			"/Users/jlhawn/workspace/distribution",
+			"/Users/jlhawn/workspace/docker/graph",
+			"",
+			"/Users/jlhawn/workspace/docker/registry",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"optional",
+			"common.",
+			"a.",
+			"common.",
+			"common",
+			"*URLBuilder)",
+			"URLBuilder",
+			"base",
+			"Forwarded",
+			"-Host",
+			".Close",
+			"storeHashState",
+			"uploadHashStatePathSpec",
+			"resumableDigester",
+			"getStoredHashStates",
+			"resumableDigester",
+			"string]string",
+			"context",
+			"context.",
+			"withMap",
+			"Level",
+			"Lovel",
+			"Formatter",
+			"garant",
+			"redigo",
+			"os.",
+			"path",
+			"filepath",
+			"path",
+			"storeHashState",
+			"resumeHashAt",
+			"uint64",
+			"sha256",
+			"Manifest",
+			"verified",
+			"LoadStatement",
+			"could not create trust store",
+			"digest",
+			"bytes.",
+			"\"Digest: %s\"",
+			"\"Digest: ",
+			"\"Digest: %s\"",
+			"GetV2ImageManifest",
+			") GetV2ImageManifest",
+			"digest",
+			"registry-stag",
+			"HeadV2ImageBlob",
+			"HEAD",
+			"Header.Get(\"Location\")",
+			") pushV2Repository(",
+			"Error pushing to registry",
+			"TestMain(",
+			"func init() {",
+			"busybox",
+			"rmi",
+			"setupImage",
+			"busybox",
+			"dockercli/busybox",
+			"createImageIndex",
+			"getImageTags",
+			"getImageList",
+			"createImageIndex",
+			"ensure busybox",
+			"ull\", \"busybox",
+			"\"busybox",
+			"Busybox",
+			"busybox",
+			"getImageList(",
+			"getImageTags",
+			"distribution",
+			"GetRepoRefs(",
+			") GetImage(",
+			"GetImage(",
+			"GetImage",
+			") GetImage",
+			"unable to find image",
+			"createContainer",
+			"ParseRepositoryRef",
+			"ParseRepository",
+			"ParseRepositoryTag",
+			"ParseRepositoryRef\nParseRepositoryTag",
+			"CmdImages",
+			"HEAD",
+			">>>>",
+			"HEAD",
+			") GetImageByDigest",
+			"SaveCheckSum",
+			"repositories_repository",
+			"Stdout.Add(",
+			"TestOutputAddClose",
+			"closeIO",
+			"CmdPull",
+			") CmdPull(",
+			">",
+			"note",
+			"notes",
+			"schema",
+			"BROKER",
+			"FS",
+			"manifest",
+			"mux",
+			"testEnv",
+			"image",
+			"pullV2Repository",
+			"mirror",
+			".Mirrors",
+			"mirror",
+			"mirrorServ",
+			"mirror",
+			"scratch",
+			"TestEventsImagePull",
+			"TestPullImageFromCentralRegistry",
+			"TestInspectImage",
+			"TestSaveMultipleNames",
+			"docker_cli_save_load_test",
+			"TestSaveImageId",
+			"-C /docker-scratch .",
+			"\"-\"",
+			"PORTS",
+			"failed to remove one or more images",
+			"validateRepoName",
+			"ErrNoID",
+			"prefix can't be empty",
+			"ErrNoID",
+			"prefix can't be empty",
+			"FROM",
+			"FROM SCRATCH",
+			"FROM scratch"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"ParseRepositoryTag",
+			"ParseRepositoryRef"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///Users/jlhawn/workspace/docker/builder":
+	{
+		"height": 112.0
+	},
+	"output.9o:///Users/jlhawn/workspace/docker/daemon/graphdriver":
+	{
+		"height": 112.0
+	},
+	"output.9o:///Users/jlhawn/workspace/docker/graph":
+	{
+		"height": 100.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 112.0
+	},
+	"output.GsDoc-output-output":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "dockramp.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

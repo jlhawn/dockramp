@@ -1,0 +1,15 @@
+{
+    "settings": {
+        "GoSublime": {
+            "env": {
+                "GOPATH": "$HOME/gopaths/dockramp"
+            }
+        }
+    },
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ]
+}
