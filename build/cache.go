@@ -2,22 +2,24 @@ package build
 
 import (
 	"crypto/sha256"
+	"encoding/json"
 	"fmt"
-
-	log "github.com/Sirupsen/logrus"
+	"os"
+	"os/user"
+	"path/filepath"
 )
 
 func (b *Builder) probeCache() bool {
-	repo, tag := b.getCachedImageName()
-	cachedImage := fmt.Sprintf("%s:%s", repo, tag)
-
-	imgInfo, err := b.client.InspectImage(cachedImage)
-	if err != nil {
-		log.Debugf("unable to inspect cached image: %s", err)
+	imageID, cacheHit := b.cache[b.getCacheKey()]
+	if !cacheHit {
 		return false
 	}
 
-	b.imageID = imgInfo.Id
+	if _, err := b.client.InspectImage(imageID); err != nil {
+		return false
+	}
+
+	b.imageID = imageID
 	b.uncommitted = false
 	b.uncommittedCommands = nil
 
@@ -26,13 +28,75 @@ func (b *Builder) probeCache() bool {
 	return true
 }
 
-func (b *Builder) getCachedImageName() (repo, tag string) {
+func (b *Builder) getCacheKey() string {
 	hasher := sha256.New()
+
+	// Note: hash.Hash never returns an error.
 	hasher.Write([]byte(b.imageID))
 
 	for _, command := range b.uncommittedCommands {
 		hasher.Write([]byte(command))
 	}
 
-	return "_build_cache", fmt.Sprintf("%x", hasher.Sum(nil))
+	return fmt.Sprintf("%x", hasher.Sum(nil))
+}
+
+func (b *Builder) setCache(imageID string) error {
+	b.cache[b.getCacheKey()] = imageID
+
+	return b.saveCache()
+}
+
+func (b *Builder) loadCache() (err error) {
+	b.cache = map[string]string{}
+
+	usr, err := user.Current()
+	if err != nil {
+		return fmt.Errorf("unable to get current user: %s", err)
+	}
+
+	cacheFilename := fmt.Sprintf("%s%c%s", usr.HomeDir, filepath.Separator, ".dockrampcache")
+	cacheFile, err := os.Open(cacheFilename)
+	if os.IsNotExist(err) {
+		// No cache file exists to load.
+		return nil
+	}
+	if err != nil {
+		return fmt.Errorf("unable to open cache file: %s", err)
+	}
+	defer func() {
+		if closeErr := cacheFile.Close(); err == nil {
+			err = closeErr
+		}
+	}()
+
+	if err := json.NewDecoder(cacheFile).Decode(&b.cache); err != nil {
+		return fmt.Errorf("unable to decode build cache: %s", err)
+	}
+
+	return nil
+}
+
+func (b *Builder) saveCache() (err error) {
+	usr, err := user.Current()
+	if err != nil {
+		return fmt.Errorf("unable to get current user: %s", err)
+	}
+
+	cacheFilename := fmt.Sprintf("%s%c%s", usr.HomeDir, filepath.Separator, ".dockrampcache")
+	cacheFile, err := os.OpenFile(cacheFilename, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, os.FileMode(0600))
+	if err != nil {
+		return fmt.Errorf("unable to open cache file: %s", err)
+	}
+	defer func() {
+		if closeErr := cacheFile.Close(); err == nil {
+			err = closeErr
+		}
+	}()
+
+	if err := json.NewEncoder(cacheFile).Encode(b.cache); err != nil {
+		return fmt.Errorf("unable to encode build cache: %s", err)
+	}
+
+	return nil
 }

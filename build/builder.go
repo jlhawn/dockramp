@@ -64,6 +64,8 @@ type Builder struct {
 	uncommitted         bool
 	uncommittedCommands []string
 
+	cache map[string]string
+
 	handlers map[string]handlerFunc
 }
 
@@ -135,6 +137,10 @@ func NewBuilder(daemonURL string, client *dockerclient.DockerClient, tlsConfig *
 		// Not implemented for now:
 		commands.Add:     b.handleAdd,
 		commands.Onbuild: b.handleOnbuild,
+	}
+
+	if err := b.loadCache(); err != nil {
+		return nil, fmt.Errorf("unable to load build cache: %s", err)
 	}
 
 	return b, nil
@@ -302,9 +308,8 @@ func (b *Builder) commit() error {
 		return fmt.Errorf("unable to remove container: %s", err)
 	}
 
-	cacheRepo, cacheTag := b.getCachedImageName()
-	if err := b.setTag(commitResponse.ID, cacheRepo, cacheTag); err != nil {
-		return fmt.Errorf("unable to tag committed image: %s", err)
+	if err := b.setCache(commitResponse.ID); err != nil {
+		return fmt.Errorf("unable to cache commited image: %s", err)
 	}
 
 	b.imageID = commitResponse.ID
