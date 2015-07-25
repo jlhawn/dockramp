@@ -84,7 +84,7 @@ func (b *Builder) statContainerPath(container, path string) (*containerPathStat,
 	query := make(url.Values, 1)
 	query.Set("path", filepath.ToSlash(path)) // Normalize the paths used in the API.
 
-	urlPath := fmt.Sprintf("/containers/%s/archive-path?%s", container, query.Encode())
+	urlPath := fmt.Sprintf("/containers/%s/archive?%s", container, query.Encode())
 	req, err := http.NewRequest("HEAD", b.client.URL.String()+urlPath, nil)
 	if err != nil {
 		return nil, fmt.Errorf("unable to prepare request: %s", err)
@@ -169,7 +169,7 @@ func (b *Builder) copyToContainer(srcPath, dstContainer, dstPath string) (err er
 	// Do not allow for an existing directory to be overwritten by a non-directory and vice versa.
 	query.Set("noOverwriteDirNonDir", "true")
 
-	urlPath := fmt.Sprintf("/containers/%s/extract-to-dir?%s", dstContainer, query.Encode())
+	urlPath := fmt.Sprintf("/containers/%s/archive?%s", dstContainer, query.Encode())
 	req, err := http.NewRequest("PUT", b.client.URL.String()+urlPath, preparedArchive)
 	if err != nil {
 		return fmt.Errorf("unable to prepare request: %s", err)
