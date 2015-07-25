@@ -22,3 +22,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# Editor/IDE specific files.
+*.sublime-project
+*.sublime-workspace
