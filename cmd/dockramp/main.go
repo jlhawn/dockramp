@@ -10,7 +10,6 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/jlhawn/dockramp/build"
-	"github.com/samalba/dockerclient"
 )
 
 const (
@@ -131,16 +130,11 @@ func main() {
 		}
 	}
 
-	client, err := dockerclient.NewDockerClient(*daemonURL, tlsConfig)
-	if err != nil {
-		log.Fatalf("unable to initialize client: %s", err)
-	}
-
 	/***************
 	 * Begin Build *
 	 ***************/
 
-	builder, err := build.NewBuilder(*daemonURL, client, tlsConfig, *contextDirectory, *dockerfilePath, *repoTag)
+	builder, err := build.NewBuilder(*daemonURL, tlsConfig, *contextDirectory, *dockerfilePath, *repoTag)
 	if err != nil {
 		log.Fatalf("unable to initialize builder: %s", err)
 	}
