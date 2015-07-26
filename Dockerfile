@@ -1,5 +1,7 @@
 FROM golang:1.4.2
 
+MAINTAINER 'Josh Hawn <jlhawn@docker.com> (github:jlhawn)'
+
 RUN mkdir -p /go/src/github.com/jlhawn/dockramp
 
 COPY . /go/src/github.com/jlhawn/dockramp
