@@ -102,7 +102,77 @@ Usage of dockramp:
 
 ## Dockerfile Syntax
 
-> TODO (jlhawn): write this next.
+While the original Dockerfile parser used by `docker build` simply scans for
+complete (unescaped) lines and parses each instruction arbitrarily based on the
+command, the Dockerfile parser in Dockramp is a more traditional parser which
+processes tokens from the input Dockerfile into instructions of positional
+arguments.
+
+The Dockerfile syntax used by Dockramp aims to be simple and familiar: a subset
+of unix shell syntax. Each instruction has a name, optional flag arguments, and
+positional arguments.
+
+### Tokens
+
+- **Whitespace**
+
+  Unquoted whitespace is ignored, but is used to delimit arguments to
+  instructions. Whitespace includes: literal space (` `), form feed (`\f`),
+  carriage return (`\r`), horizontal tab (`\t`), vertical tab (`\v`), or a
+  newline (`\n`) character escaped using a backslash (`\`).
+
+- **Comments**
+
+  Comments are specified using a hash or pound (`#`) character and cause the
+  remainder of that line to be ignored.
+
+- **Newlines**
+
+  A newline character (`\n`) is used to end an instruction. Empty lines and
+  lines containing only whitespace are ignored.
+
+- **Arguments**
+
+  Instructions are whitespace delimited and arguments can can be single or
+  double quoted strings allowing for arguments which contain whitespace.
+
+  - **Single Quoted String**
+
+    A single quoted string is evaluated to be the literal value of the sequence
+    of characters between two single quotes (`'`). Any character (including a
+    newline) that is not a single quote may be included in the string. No
+    escape processing is done on single quoted strings.
+
+  - **Double Quoted String**
+
+    A double quoted string is evaluated to be the value of the sequence of
+    characters between two double quotes (`"`) with some escape sequence
+    processing. Any character (including a newline) that is not a double quote
+    (unless it is escaped first as in `\"`) may appear between the double
+    quotes. An escaped double quote character is replaced with a double quote.
+    An escaped backslash is replaced with a single backslash. An escaped
+    newline is replaced with nothing. No other escape processing is done.
+
+  - **Raw Argument**
+
+    A raw argument is a sequence of one or more characters that are not already
+    specified above meaning no hash (`#`), single (`'`) or double (`"`) quote
+    character, any whitespace character, and backslash `\`. However, any of
+    these characters may be escaped by a backslash character. Escaped sequences
+    are replaced with the escaped character, except for escaped newlines which
+    are replaced with nothing.
+
+  Quoted tokens that are not separated by whitespace are joined into a single
+  argument value. For example, `hel"lo wo"'rld!'` is evaluated into a single
+  argument `hello world!`.
+
+- **Heredocs**
+
+  > TODO
+
+- **Instructions**
+
+  > TODO
 
 ## TODO
 

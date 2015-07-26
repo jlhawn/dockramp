@@ -75,7 +75,7 @@ func (t unevaluatedToken) eval(match string) token {
 		return argToken(dblQuoteEscapeSeq.ReplaceAllStringFunc(quoted, dblQuoteEscapeFunc))
 	case unevaluatedTokenRawArg:
 		// Args are the literal value with escaped sequences replaced
-		// with the escaped charecter, except for escaped newlines which are
+		// with the escaped character, except for escaped newlines which are
 		// replaced with nothing.
 		return argToken(unquotedEscapeSeq.ReplaceAllStringFunc(match, unquotedEscapeFunc))
 	default:
