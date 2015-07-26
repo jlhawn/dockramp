@@ -14,7 +14,7 @@ proof of concept for an alternative to `docker build`.
   Builds will no longer wait to begin while your client uploads a (sometimes
   large) context directory to the Docker daemon. In **Dockramp**, files and
   directories are only transfered when they need to be: on a `COPY` or
-  `EXTRACT` instruction. You'll notice that builds start much faster then they
+  `EXTRACT` instruction. You'll notice that builds start much faster than they
   ever would have using `docker build`.
 
 - **Efficient layering and caching**
