@@ -1,19 +1,11 @@
-FROM "debian:jessie"
+FROM golang:1.4.2
 
-MAINTAINER "Josh Hawn <josh.hawn@docker.com>"
+RUN mkdir -p /go/src/github.com/jlhawn/dockramp
 
-COPY . /stuff
+COPY . /go/src/github.com/jlhawn/dockramp
 
-# This is a comment
-RUN /bin/sh << EOF
+RUN sh << EOF
 	set -ex
-	apt-get update
-	apt-get install -y python
+	GOPATH="$GOPATH:/go/src/github.com/jlhawn/dockramp/Godeps/_workspace" \
+		go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
 EOF
-
-ENTRYPOINT /bin/bash -c
-CMD "echo 'hello, world!'"
-
-EXPOSE 80
-LABEL key "multi-part value"
-
