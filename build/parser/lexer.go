@@ -128,7 +128,7 @@ type unevaluatedHeredoc struct {
 }
 
 var (
-	heredocStartPattern = regexp.MustCompile(`^<<(-)?(?:[ \f\r\t\v])*(.+)\n`)
+	heredocStartPattern = regexp.MustCompile(`^<<(-)?(?:[ \f\r\t\v])*([a-zA-Z0-9_]+)\n`)
 	leadingTabsPattern  = regexp.MustCompile(`(?m)^\t+`)
 )
 

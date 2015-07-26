@@ -157,10 +157,10 @@ positional arguments.
 
     A raw argument is a sequence of one or more characters that are not already
     specified above meaning no hash (`#`), single (`'`) or double (`"`) quote
-    character, any whitespace character, and backslash `\`. However, any of
-    these characters may be escaped by a backslash character. Escaped sequences
-    are replaced with the escaped character, except for escaped newlines which
-    are replaced with nothing.
+    character, `<` (used by heredocs), and any whitespace character. However,
+    any of these characters may be escaped by a backslash `\` character.
+    Escaped sequences are replaced with the escaped character, except for
+    escaped newlines which are replaced with nothing.
 
   Quoted tokens that are not separated by whitespace are joined into a single
   argument value. For example, `hel"lo wo"'rld!'` is evaluated into a single
@@ -168,9 +168,21 @@ positional arguments.
 
 - **Heredocs**
 
-  > TODO
+  Some instructions, such as `RUN`, can accept an input stream in the form of
+  a [heredoc](https://en.wikipedia.org/wiki/Here_document). A heredoc is
+  specified as the last argument to an instruction in the form `<<` and
+  followed immediately by an alphanumeric delimiting term such as `<< EOF` or
+  `<< END`. This opens the heredoc.
 
-- **Instructions**
+  The following lines will contain the literal text to be used as input to the
+  instruction. If the heredoc was opened using `<<-` rather than `<<` then
+  leading tab characters of each line will be ignored, allowing for indentation
+  of a heredoc without changing its value.
+
+  A heredoc is closed by the delimiting term appearing alone on its own line
+  (no leading or trailing whitespace).
+
+### Instructions
 
   > TODO
 
