@@ -6,6 +6,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 
 	"github.com/jlhawn/dockramp/build/commands"
@@ -202,8 +203,6 @@ func (b *Builder) Run() error {
 }
 
 func (b *Builder) dispatch(stepNum int, command *parser.Command) error {
-	commandStr := strings.Join(command.Args, " ")
-
 	cmd, args := strings.ToUpper(command.Args[0]), command.Args[1:]
 
 	// FROM must be the first and only the first command.
@@ -216,9 +215,6 @@ func (b *Builder) dispatch(stepNum int, command *parser.Command) error {
 		return fmt.Errorf("unknown command: %q", cmd)
 	}
 
-	// Print the current step.
-	fmt.Fprintf(b.out, "Step %d: %s\n", stepNum, commandStr)
-
 	if _, ok := commands.ReplaceEnvAllowed[cmd]; ok {
 		// Expand environment variables in the arguments.
 		for i, arg := range args {
@@ -230,6 +226,11 @@ func (b *Builder) dispatch(stepNum int, command *parser.Command) error {
 			args[i] = arg
 		}
 	}
+
+	// Print the current step.
+	commandStr := makeCommandString(cmd, args...)
+
+	fmt.Fprintf(b.out, "Step %d: %s\n", stepNum, commandStr)
 
 	b.uncommitted = true
 	b.uncommittedCommands = append(b.uncommittedCommands, commandStr)
@@ -248,4 +249,19 @@ func (b *Builder) dispatch(stepNum int, command *parser.Command) error {
 	}
 
 	return nil
+}
+
+// makeCommandString returns a printable form of the command and arguments with
+// arguments quoted if necessary.
+func makeCommandString(cmd string, args ...string) string {
+	quotedArgs := make([]string, len(args))
+
+	for i, arg := range args {
+		if strings.ContainsAny(arg, "<#'\" \f\n\r\t\v\\") {
+			arg = strconv.Quote(arg)
+		}
+		quotedArgs[i] = arg
+	}
+
+	return fmt.Sprintf("%s %s", cmd, strings.Join(quotedArgs, " "))
 }

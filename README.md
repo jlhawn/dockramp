@@ -62,19 +62,19 @@ for build intstructions.
 $ # Executes the Dockerfile in this repository.
 $ dockramp 
 Step 0: FROM golang:1.4.2
-Step 1: RUN mkdir -p /go/src/github.com/jlhawn/dockramp
- ---> b49a5a6950c7800683009cbd2675f06b7206cddfa6650559070854b47d777bee
-Step 2: COPY . /go/src/github.com/jlhawn/dockramp
- ---> 0fc2aa6107083295be07b7d3e529ca5b7b7363294c4f4ffb515f69f1c1dbe80f
-Step 3: RUN sh
+Step 1: MAINTAINER "Josh Hawn <jlhawn@docker.com> (github:jlhawn)"
+Step 2: ENV PROJ_DIR /go/src/github.com/jlhawn/dockramp
+Step 3: RUN sh -c "mkdir -p $PROJ_DIR"
+ ---> 0744c1be2f5fb40c355bace595171c180f2a7b2d19ec15e0c92da2fa0c1d7198
+Step 4: COPY . /go/src/github.com/jlhawn/dockramp
+ ---> 8a40aa285e0ecc70ba5361085ef2faf0e755a8dbf7f2224b377c5c0035dc22a5
+Step 5: RUN sh
 Input:
-	set -ex
-	GOPATH="$GOPATH:/go/src/github.com/jlhawn/dockramp/Godeps/_workspace" \
-		go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
+	export GOPATH="$PROJ_DIR/Godeps/_workspace:$GOPATH"
+	go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
 
-+ GOPATH=/go:/go/src/github.com/jlhawn/dockramp/Godeps/_workspace go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
- ---> 3962de550c8044986a33f9da1f6936d6d2912676208b1207a62da859e389e629
-Successfully built 3962de550c8044986a33f9da1f6936d6d2912676208b1207a62da859e389e629
+ ---> 029e66e2587118f5f6c5176da65ffbde3b501b25136a637c3d700ee369104374
+Successfully built 029e66e2587118f5f6c5176da65ffbde3b501b25136a637c3d700ee369104374
 ```
 
 You can use the `-C` flag to specify a directory to use as the build context.
