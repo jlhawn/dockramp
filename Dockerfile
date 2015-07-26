@@ -2,12 +2,13 @@ FROM golang:1.4.2
 
 MAINTAINER 'Josh Hawn <jlhawn@docker.com> (github:jlhawn)'
 
-RUN mkdir -p /go/src/github.com/jlhawn/dockramp
+ENV PROJ_DIR /go/src/github.com/jlhawn/dockramp
 
-COPY . /go/src/github.com/jlhawn/dockramp
+RUN sh -c 'mkdir -p $PROJ_DIR'
+
+COPY . $PROJ_DIR
 
 RUN sh << EOF
-	set -ex
-	GOPATH="$GOPATH:/go/src/github.com/jlhawn/dockramp/Godeps/_workspace" \
-		go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
+	export GOPATH="$PROJ_DIR/Godeps/_workspace:$GOPATH"
+	go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
 EOF
