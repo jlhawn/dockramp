@@ -184,9 +184,163 @@ positional arguments.
 
 ### Instructions
 
-  > TODO
+All instruction names are case insensitive, i.e, `RUN` and `run` are considered
+equivalent. However, all-caps is still the preferred form.
+
+- **`ADD`**
+
+  Not supported. For extracting a tar archive to a directory in the container
+  use the `EXTRACT` instruction instead. Downloading a resource from a URL into
+  the container is planned to be supported soon via some other instruction.
+
+- **`CMD`**
+
+  Provide default arguments to a container's Entrypoint.
+
+  ```
+  CMD arg ...
+  ```
+
+  - Accepts zero or more arguments.
+
+- **`COPY`**
+
+  Copy a file or directory from the build context to a location in the
+  container.
+
+  ```
+  COPY source destination
+  ```
+
+  - Requires exactly 2 arguments.
+  - `source` is relative to the build context directory.
+  - `destination` is an absolute path in the container.
+
+- **`ENTRYPOINT`**
+
+  Specify the file to execute and any permanent arguments when running the
+  container.
+
+  ```
+  ENTRYPOINT arg ...
+  ```
+
+  - Accepts zero or more arguments.
+
+- **`ENV`**
+
+  Set an environment variable for when the container runs.
+
+  ```
+  ENV key value
+  ```
+
+  - Requires exactly 2 arguments.
+
+- **`EXPOSE`**
+
+  Expose a tcp or udp port in the container to the network.
+
+  ```
+  EXPOSE portspec
+  ```
+
+  - Requires exactly 1 argument.
+
+- **`EXTRACT`**
+
+  Extract a tar archive to a directory inside the container.
+
+  ```
+  EXTRACT source destination
+  ```
+
+  - Requires exactly 2 arguments.
+  - `source` is relative to the build context directory.
+  - `destination` is an absolute path in the container and must be an existing
+    directory.
+
+- **`FROM`**
+
+  Use the specified image as the base container image to build from.
+
+  ```
+  FROM imagespec
+  ```
+
+  - Requires exactly 1 argument.
+  - `scratch` is used to indicate that the build should start with an empty
+    container filesystem.
+
+- **`LABEL`**
+
+  Add metadata to the container image.
+
+  ```
+  LABEL key value
+  ```
+
+  - Requires exactly 2 arguments.
+
+- **`MAINTAINER`**
+
+  Specify the author of the resulting container image.
+
+  ```
+  MAINTAINER name_and_info
+  ```
+
+  - Requires exactly 1 argument.
+
+- **`ONBUILD`**
+
+  Not supported.
+
+- **`RUN`**
+
+  Execute a command inside of a container.
+
+  ```
+  RUN arg ...
+  ```
+
+  - Requires at least 1 argument.
+  - Can use a heredoc to specify `stdin` to the command.
+
+- **`USER`**
+
+  Set the username or UID to use when running the container.
+
+  ```
+  USER userspec
+  ```
+
+  - Requires exactly 1 argument.
+
+- **`VOLUME`**
+
+  Create a mount point inside the container.
+
+  ```
+  VOLUME path
+  ```
+
+  - Requires exactly 1 argument.
+
+- **`WORKDIR`**
+
+  Set the working directory for the container.
+
+  ```
+  WORKDIR directory
+  ```
+
+  - Requires exactly 1 argument.
+  - `directory` is an absolute path inside the container.
+
 
 ## TODO
 
-- Handle `.dockerignore`
+- Handle `.dockerignore`.
+- Resolve tag references to digest references using Notary before image pulls.
 - Implement various options (via flags) to many Dockerfile instructions.
