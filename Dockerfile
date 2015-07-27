@@ -1,14 +1,21 @@
-FROM golang:1.4.2
+FROM golang:1.4.2-cross
 
 MAINTAINER 'Josh Hawn <jlhawn@docker.com> (github:jlhawn)'
 
 ENV PROJ_DIR /go/src/github.com/jlhawn/dockramp
 
+ENV PLATFORMS '
+	darwin/386   darwin/amd64
+	freebsd/386  freebsd/amd64  freebsd/arm
+	linux/386    linux/amd64    linux/arm
+	windows/386  windows/amd64
+'
+
 RUN sh -c 'mkdir -p $PROJ_DIR'
 
 COPY . $PROJ_DIR
 
-RUN sh << EOF
-	export GOPATH="$PROJ_DIR/Godeps/_workspace:$GOPATH"
-	go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
-EOF
+RUN sh -c 'cp "$PROJ_DIR/make_binaries.sh" /usr/local/bin/make_binaries.sh'
+
+ENTRYPOINT /usr/local/bin/make_binaries.sh
+CMD /bundles

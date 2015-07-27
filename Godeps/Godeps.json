@@ -70,7 +70,7 @@
 		},
 		{
 			"ImportPath": "github.com/jlhawn/tarsum",
-			"Rev": "45882838d8449405ed74bc52d3900d03e16022bd"
+			"Rev": "d07f381518d81a1043f9f1f6e272101b52b85970"
 		},
 		{
 			"ImportPath": "github.com/samalba/dockerclient",
