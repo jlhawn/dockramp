@@ -52,6 +52,19 @@ proof of concept for an alternative to `docker build`.
   See the **Dockerfile Syntax** section below for examples and notable
   differences from Docker's Dockerfile syntax.
 
+## Installation
+
+Visit the [release page](https://github.com/jlhawn/dockramp/releases) to get
+a binary for the latest version on your OS/Arch. If you'd rather compile it
+yourself (like I would), you just need `git` and `go`:
+
+```bash
+project_dir="$HOME/dockramp/src/github.com/jlhawn/dockramp"
+mkdir -p $project_dir
+git clone https://github.com/jlhawn/dockramp.git $project_dir
+GOPATH="$project_dir/Godeps/_workspace:$HOME/dockramp" go build -o /usr/local/bin/dockramp github.com/jlhawn/dockramp/cmd/dockramp
+```
+
 ## Usage
 
 Invoking `dockramp` with no other arguments will use the current directory as
