@@ -2,6 +2,8 @@
 
 A Client-driven Docker Container Image Builder
 
+![truck-ramp](https://cloud.githubusercontent.com/assets/1441929/8937404/0371f5da-350d-11e5-9636-f0a8e3dae620.jpg)
+
 ## Features
 
 Docker 1.8.0 will introduce a new API endpoint for copying files and
