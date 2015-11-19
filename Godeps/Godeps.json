@@ -1,6 +1,6 @@
 {
 	"ImportPath": "github.com/jlhawn/dockramp",
-	"GoVersion": "go1.4.2",
+	"GoVersion": "go1.5.1",
 	"Packages": [
 		"./..."
 	],
@@ -12,18 +12,13 @@
 		},
 		{
 			"ImportPath": "github.com/docker/distribution/digest",
-			"Comment": "v2.0.0-299-gd0fda14",
-			"Rev": "d0fda14e858625e22e9bfaea4feda20bb8b60130"
+			"Comment": "v2.1.1-190-g0a3acb2",
+			"Rev": "0a3acb2625f553a71392ed9dc6ba1dde2cf3e3a8"
 		},
 		{
-			"ImportPath": "github.com/docker/distribution/registry/api/errcode",
-			"Comment": "v2.0.0-299-gd0fda14",
-			"Rev": "d0fda14e858625e22e9bfaea4feda20bb8b60130"
-		},
-		{
-			"ImportPath": "github.com/docker/distribution/registry/api/v2",
-			"Comment": "v2.0.0-299-gd0fda14",
-			"Rev": "d0fda14e858625e22e9bfaea4feda20bb8b60130"
+			"ImportPath": "github.com/docker/distribution/reference",
+			"Comment": "v2.1.1-190-g0a3acb2",
+			"Rev": "0a3acb2625f553a71392ed9dc6ba1dde2cf3e3a8"
 		},
 		{
 			"ImportPath": "github.com/docker/docker/pkg/fileutils",
@@ -59,14 +54,6 @@
 			"ImportPath": "github.com/docker/docker/pkg/units",
 			"Comment": "v1.4.1-4210-gfef0e84",
 			"Rev": "fef0e84b2df31ba12fa46984e3564f9daa6f576d"
-		},
-		{
-			"ImportPath": "github.com/gorilla/context",
-			"Rev": "215affda49addc4c8ef7e2534915df2c8c35c6cd"
-		},
-		{
-			"ImportPath": "github.com/gorilla/mux",
-			"Rev": "47e8f450ef38c857cdd922ec08862ca9d65a1c6d"
 		},
 		{
 			"ImportPath": "github.com/jlhawn/tarsum",
