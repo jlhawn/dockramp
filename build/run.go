@@ -72,7 +72,7 @@ func (b *Builder) createContainer(entryPoint, cmd []string, openStdin bool) (con
 	config.OpenStdin = openStdin
 	config.StdinOnce = openStdin
 
-	return b.client.CreateContainer(config, "")
+	return b.client.CreateContainer(config, "", nil)
 }
 
 func (b *Builder) attachContainer(container string, input io.Reader) (chan error, error) {
