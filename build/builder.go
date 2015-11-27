@@ -196,6 +196,12 @@ func (b *Builder) Run() error {
 	return nil
 }
 
+// ImageID returns the image id of the build image, returns
+// empty if the build has not run successfully.
+func (b *Builder) ImageID() string {
+	return b.imageID
+}
+
 func (b *Builder) dispatch(stepNum int, command *parser.Command) error {
 	cmd, args := strings.ToUpper(command.Args[0]), command.Args[1:]
 
