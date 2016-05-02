@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/docker/distribution/reference"
 	"github.com/jlhawn/dockramp/build/commands"
 	"github.com/jlhawn/dockramp/build/parser"
-	"github.com/jlhawn/dockramp/build/util"
 	"github.com/samalba/dockerclient"
 )
 
@@ -49,7 +49,7 @@ type Builder struct {
 	client           *dockerclient.DockerClient
 	contextDirectory string
 	dockerfilePath   string
-	repo, tag        string
+	ref              reference.Reference
 
 	out io.Writer
 
@@ -85,16 +85,10 @@ func NewBuilder(daemonURL string, tlsConfig *tls.Config, contextDirectory, docke
 		return nil, fmt.Errorf("unable to access build file: %s", err)
 	}
 
-	// Validate the repository and tag.
-	repo, tag := util.ParseRepositoryTag(repoTag)
-	if repo != "" {
-		if err := util.ValidateRepositoryName(repo); err != nil {
-			return nil, fmt.Errorf("invalid repository name: %s", err)
-		}
-		if tag != "" {
-			if err := util.ValidateTagName(tag); err != nil {
-				return nil, fmt.Errorf("invalid tag: %s", err)
-			}
+	ref, err := reference.Parse(repoTag)
+	if err != nil {
+		if err != reference.ErrNameEmpty {
+			return nil, fmt.Errorf("invalid tag: %s", err)
 		}
 	}
 
@@ -109,8 +103,7 @@ func NewBuilder(daemonURL string, tlsConfig *tls.Config, contextDirectory, docke
 		client:           client,
 		contextDirectory: contextDirectory,
 		dockerfilePath:   dockerfilePath,
-		repo:             repo,
-		tag:              tag,
+		ref:              ref,
 		out:              os.Stdout,
 		config: &config{
 			Labels:       map[string]string{},
@@ -186,20 +179,27 @@ func (b *Builder) Run() error {
 	}
 
 	imageName := b.imageID
-	if b.repo != "" {
-		if err := b.setTag(imageName, b.repo, b.tag); err != nil {
-			return fmt.Errorf("unable to tag built image: %s", err)
-		}
+	if named, hasName := b.ref.(reference.Named); hasName {
+		imageName = b.ref.String()
 
-		imageName = b.repo
-		if b.tag != "" {
-			imageName = fmt.Sprintf("%s:%s", imageName, b.tag)
+		var tag string
+		if tagged, isTagged := named.(reference.Tagged); isTagged {
+			tag = tagged.Tag()
+		}
+		if err := b.setTag(b.imageID, named.Name(), tag); err != nil {
+			return fmt.Errorf("unable to tag built image: %s", err)
 		}
 	}
 
 	fmt.Fprintf(b.out, "Successfully built %s\n", imageName)
 
 	return nil
+}
+
+// ImageID returns the image id of the build image, returns
+// empty if the build has not run successfully.
+func (b *Builder) ImageID() string {
+	return b.imageID
 }
 
 func (b *Builder) dispatch(stepNum int, command *parser.Command) error {
